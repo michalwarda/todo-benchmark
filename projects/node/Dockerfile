@@ -4,13 +4,12 @@ RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
 WORKDIR /app
 
+COPY package.json .
 COPY pnpm-lock.yaml .
 
-RUN pnpm fetch
+RUN pnpm install --frozen-lockfile
 
 COPY . .
-
-RUN pnpm install -r --offline
 
 RUN pnpm run build
 
@@ -23,15 +22,12 @@ RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
 WORKDIR /app
 
+COPY --from=builder /app/package.json ./
 COPY --from=builder /app/pnpm-lock.yaml ./
 
-RUN pnpm fetch --prod
+RUN pnpm install --frozen-lockfile --prod
 
-
-COPY --from=builder /app ./
-
-RUN pnpm install -r --offline --prod
-
+COPY --from=builder /app/dist ./
 
 EXPOSE 4000
-CMD [ "node", "dist/index.js" ]
+CMD [ "node", "index.js" ]
