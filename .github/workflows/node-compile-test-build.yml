@@ -3,7 +3,7 @@ name: Node Compile, Test, Build
 on:
   push:
     branches:
-      - node
+      - main
 
 jobs:
   compile-and-test:
