@@ -26,3 +26,9 @@ jobs:
           cache-dependency-path: projects/node/pnpm-lock.yaml
       - run: pnpm i
       - run: pnpm run test -- --run
+      - uses: docker/setup-buildx-action@v2
+      - uses: docker/build-push-action@v4
+        with:
+          context: projects/bun
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
