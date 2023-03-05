@@ -23,5 +23,6 @@ jobs:
         with:
           node-version: 19
           cache: 'pnpm'
+          cache-dependency-path: projects/node/pnpm-lock.yaml
       - run: pnpm i
       - run: pnpm run test -- --run
