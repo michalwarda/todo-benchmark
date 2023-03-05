@@ -17,4 +17,4 @@ jobs:
           fetch-depth: 0
       - uses: oven-sh/setup-bun@v0.1.8
       - run: bun i
-      - run: bun test
+      - run: bun run test
