@@ -2,7 +2,6 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { appRouter } from "./modules/app/index.js";
 import { prepareCreateContext } from "./server/context.js";
 import { setupContainer } from "./container.js";
-
 export default {
   port: 4000,
 
