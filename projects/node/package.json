@@ -5,7 +5,7 @@
   "scripts": {
     "test": "DATABASE_FILENAME=':memory:' vitest",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "DATABASE_FILENAME='database.sqlite' node dist/index.js"
   },
   "devDependencies": {
     "@trpc/client": "^10.11.0",
