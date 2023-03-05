@@ -17,6 +17,7 @@ jobs:
           fetch-depth: 0
       - uses: oven-sh/setup-bun@v0.1.8
       - run: bun i
+      - run: bun run typecheck
       - run: bun run test
       - name: Docker meta
         id: meta

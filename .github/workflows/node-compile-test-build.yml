@@ -26,6 +26,7 @@ jobs:
           cache-dependency-path: projects/node/pnpm-lock.yaml
       - run: pnpm i
       - run: pnpm run test -- --run
+      - run: pnpm run typecheck
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4

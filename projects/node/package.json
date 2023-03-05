@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "DATABASE_FILENAME=':memory:' vitest",
+    "typecheck": "tsc --noEmit",
     "build": "tsc",
     "start": "DATABASE_FILENAME='database.sqlite' node dist/index.js"
   },
