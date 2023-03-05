@@ -5,7 +5,6 @@ import { setupContainer } from "./container.js";
 
 export default {
   port: 4000,
-
   async fetch(request: Request): Promise<Response> {
     return fetchRequestHandler({
       endpoint: "/trpc",
