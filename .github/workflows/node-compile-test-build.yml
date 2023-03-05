@@ -1,0 +1,23 @@
+name: Node Compile, Test, Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  compile-and-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./projects/node
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 19
+          cache: 'pnpm'
+      - run: pnpm i
+      - run: pnpm test
