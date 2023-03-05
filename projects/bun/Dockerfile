@@ -12,4 +12,5 @@ RUN bun i
 
 COPY . .
 
-CMD bun run start
+EXPOSE 4000
+CMD ["bun", "run", "start"]
