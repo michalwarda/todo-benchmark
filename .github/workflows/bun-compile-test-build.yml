@@ -3,7 +3,7 @@ name: Bun Compile, Test, Build
 on:
   push:
     branches:
-      - bun
+      - main
 
 jobs:
   compile-and-test:
