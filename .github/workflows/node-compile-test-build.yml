@@ -37,4 +37,4 @@ jobs:
           context: projects/node
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags: ghcr.io/michalwarda/todo-benchmark/bun:latest
+          tags: ghcr.io/michalwarda/todo-benchmark/node:latest
